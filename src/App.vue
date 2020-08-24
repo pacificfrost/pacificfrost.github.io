@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-navigation-drawer app> </v-navigation-drawer>
+    <v-navigation-drawer app></v-navigation-drawer>
 
-    <v-app-bar app> </v-app-bar>
+    <v-app-bar app></v-app-bar>
 
     <v-main>
       <v-container fluid>
@@ -10,7 +10,7 @@
       </v-container>
     </v-main>
 
-    <v-footer app> </v-footer>
+    <v-footer app></v-footer>
   </v-app>
 </template>
 
@@ -19,9 +19,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'App',
-
   components: {},
-
   data: () => ({}),
 });
 </script>
