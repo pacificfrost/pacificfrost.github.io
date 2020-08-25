@@ -1,8 +1,15 @@
 <template>
   <v-app>
-    <v-navigation-drawer app></v-navigation-drawer>
-
-    <v-app-bar app></v-app-bar>
+    <v-app-bar
+      app
+      color="white"
+      elevate-on-scroll
+      prominent
+      shrink-on-scroll
+      shaped
+    >
+      <pa-nav></pa-nav>
+    </v-app-bar>
 
     <v-main>
       <v-container fluid>
@@ -16,10 +23,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Nav from '@/components/Nav/Nav.vue';
 
 export default Vue.extend({
   name: 'App',
-  components: {},
+  components: {
+    'pa-nav': Nav,
+  },
   data: () => ({}),
 });
 </script>
