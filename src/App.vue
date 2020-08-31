@@ -1,13 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="white"
-      elevate-on-scroll
-      prominent
-      shrink-on-scroll
-      shaped
-    >
+    <v-app-bar app color="white" elevate-on-scroll>
       <pa-nav></pa-nav>
     </v-app-bar>
 
