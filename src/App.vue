@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Nav from '@/components/Nav/Nav.vue';
+import Nav from '@/components/Nav.vue';
 
 export default Vue.extend({
   name: 'App',

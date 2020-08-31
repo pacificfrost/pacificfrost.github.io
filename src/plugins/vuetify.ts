@@ -1,8 +1,18 @@
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
+import IconMapet from '@/icons/IconMapet.vue';
+
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
 Vue.use(Vuetify);
 
-export default new Vuetify({});
+export default new Vuetify({
+  icons: {
+    values: {
+      mapet: {
+        component: IconMapet,
+      },
+    },
+  },
+});
