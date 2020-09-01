@@ -30,8 +30,8 @@
               label="Username"
             ></v-text-field>
             <v-text-field
-              filled
               :rules="[formRules.required]"
+              filled
               label="Password"
               type="password"
             ></v-text-field>
@@ -45,9 +45,9 @@
             </v-btn>
 
             <v-btn
+              :dark="login.valid"
               :disabled="!login.valid"
               class="pr-3"
-              :dark="login.valid"
               color="deep-purple"
               rounded
             >
@@ -75,30 +75,30 @@
         <v-form ref="signUp" v-model="signUp.valid">
           <v-card-text>
             <v-text-field
+              :rules="[formRules.minLength, formRules.required]"
               filled
-              :rules="[formRules.required, formRules.minLength]"
               label="Username"
               v-model="signUp.username"
             ></v-text-field>
             <v-text-field
-              filled
               :rules="[
-                formRules.required,
-                formRules.password,
                 formRules.minLength,
+                formRules.password,
+                formRules.required,
               ]"
+              filled
               label="Password"
               type="password"
               v-model="signUp.password"
             ></v-text-field>
             <v-text-field
-              filled
               :rules="[
-                formRules.required,
-                formRules.password,
-                formRules.minLength,
                 confirmPasswordRules,
+                formRules.minLength,
+                formRules.password,
+                formRules.required,
               ]"
+              filled
               label="Confirm Password"
               type="password"
               v-model="signUp.confirmPassword"
@@ -113,9 +113,9 @@
             </v-btn>
 
             <v-btn
+              :dark="signUp.valid"
               :disabled="!signUp.valid"
               class="pr-3"
-              :dark="signUp.valid"
               color="deep-purple"
               rounded
             >
