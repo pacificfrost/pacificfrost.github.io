@@ -1,0 +1,103 @@
+<template>
+  <v-container fluid fill-height>
+    <v-card elevation="24" max-width="444" class="mx-auto">
+      <v-carousel
+        :continuous="false"
+        :show-arrows="false"
+        delimiter-icon="mdi-minus"
+        height="300"
+        hide-delimiter-background
+      >
+        <v-carousel-item
+          :key="i"
+          :src="image"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+          v-for="(image, i) in pet.images"
+        ></v-carousel-item>
+      </v-carousel>
+
+      <v-col cols="12">
+        <h2 class="text-h4">{{ pet.name }}</h2>
+
+        <v-flex>
+          <v-row justify="space-between" class="ma-0 my-4">
+            <v-card tile class="flex-grow-1 pa-2" elevation="0">
+              Breed:
+              <h2 class="text-h5">{{ pet.breed }}</h2>
+            </v-card>
+
+            <v-card tile class="flex-grow-1 pa-2" elevation="0">
+              Weight:
+              <h2 class="text-h5">{{ pet.weight }}</h2>
+            </v-card>
+
+            <v-card tile class="flex-grow-1 pa-2" elevation="0">
+              Age:
+              <h2 class="text-h5">{{ pet.age }}</h2>
+            </v-card>
+
+            <v-card tile class="flex-grow-1 pa-2" elevation="0">
+              Friendly:
+              <h2 class="text-h5">
+                <v-icon color="green" v-if="pet.social">check</v-icon>
+                <v-icon color="red" v-else>cross</v-icon>
+              </h2>
+            </v-card>
+          </v-row>
+        </v-flex>
+
+        <h5 class="text-h6">Description</h5>
+        <p class="text-body1">{{ pet.description }}</p>
+
+        <h5 class="text-h6">Location</h5>
+      </v-col>
+
+      <div></div>
+    </v-card>
+  </v-container>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { differenceInYears, parse } from 'date-fns';
+
+import Pet from '@/models/Pet';
+import { ActionTypes as PetActions } from '@/store/modules/pet/actions';
+
+export default Vue.extend({
+  components: {},
+  beforeMount: function() {
+    this._getPets();
+  },
+  data: () => ({
+    loading: true,
+    pet: new Pet(),
+  }),
+  name: 'PetProfile',
+  methods: {
+    async _getPets() {
+      this.loading = true;
+
+      try {
+        await this.$store.dispatch(PetActions.REQUEST_PETS).then(() => {
+          this.pet = this.$store.getters.getPet(this.$route.params.id);
+
+          this._getPetAge();
+
+          this.loading = false;
+        });
+      } catch (e) {
+        this.loading = false;
+      }
+    },
+    _getPetAge() {
+      const dateOfBirth = parse(this.pet.dob, 'MM/yy', new Date());
+      const today = new Date();
+      const diff = differenceInYears(today, dateOfBirth);
+
+      this.$set(this.pet, 'age', diff);
+    },
+  },
+});
+</script>

@@ -8,6 +8,7 @@ import store from '@/store';
 import Vue from 'vue';
 import vuetify from '@/plugins/vuetify';
 
+Vue.config.devtools = true;
 Vue.config.productionTip = false;
 
 new Vue({
