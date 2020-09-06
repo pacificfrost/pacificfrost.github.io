@@ -47,6 +47,25 @@
           </v-row>
         </v-flex>
 
+        <v-flex>
+          <v-row class="mx-0" align="center" justify="space-between">
+            <v-avatar>
+              <v-img
+                src="https://myesadoctor.com/wp-content/uploads/2020/04/client-1y.webp"
+              ></v-img>
+            </v-avatar>
+
+            <v-col class="pa-0">
+              <v-card-title>Owner</v-card-title>
+              <v-card-subtitle>{{ pet.contact.phone }}</v-card-subtitle>
+            </v-col>
+
+            <v-btn color="ml-12 green" fab small
+              ><v-icon class="white--text">phone</v-icon></v-btn
+            >
+          </v-row>
+        </v-flex>
+
         <h5 class="text-h6">Description</h5>
         <p class="text-body1">{{ pet.description }}</p>
 
