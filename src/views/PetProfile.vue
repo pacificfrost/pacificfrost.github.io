@@ -1,6 +1,6 @@
 <template>
   <v-container fluid fill-height>
-    <v-card elevation="24" max-width="444" class="mx-auto">
+    <v-card elevation="24" class="mx-auto">
       <v-carousel
         :continuous="false"
         :show-arrows="false"
@@ -72,7 +72,7 @@
         <h5 class="text-h6">Location</h5>
       </v-col>
 
-      <div></div>
+      <google-map></google-map>
     </v-card>
   </v-container>
 </template>
@@ -84,8 +84,12 @@ import { differenceInYears, parse } from 'date-fns';
 import Pet from '@/models/Pet';
 import { ActionTypes as PetActions } from '@/store/modules/pet/actions';
 
+import GoogleMap from '@/components/GoogleMap.vue';
+
 export default Vue.extend({
-  components: {},
+  components: {
+    'google-map': GoogleMap,
+  },
   beforeMount: function() {
     this._getPets();
   },
