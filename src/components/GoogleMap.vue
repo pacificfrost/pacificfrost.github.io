@@ -24,7 +24,6 @@ export default {
     try {
       await GoogleMaps().then(google => {
         this.google = google;
-
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(this.showPosition);
         }

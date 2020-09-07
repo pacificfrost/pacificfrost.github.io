@@ -56,8 +56,33 @@
             </v-avatar>
 
             <v-col class="pa-0">
-              <v-card-title>Owner</v-card-title>
+              <v-card-title>{{ pet.contact.name }}</v-card-title>
               <v-card-subtitle>{{ pet.contact.phone }}</v-card-subtitle>
+            </v-col>
+
+            <v-btn color="ml-12 green" fab small
+              ><v-icon class="white--text">phone</v-icon></v-btn
+            >
+
+            <v-btn color="ml-4 blue" fab small
+              ><v-icon class="white--text">mail</v-icon></v-btn
+            >
+          </v-row>
+        </v-flex>
+
+        <v-flex>
+          <v-row class="mx-0" align="center" justify="space-between">
+            <v-avatar color="blue">
+              <v-icon class="white--text">local_hospital</v-icon>
+            </v-avatar>
+
+            <v-col class="pa-0">
+              <v-card-title>Vetinary Contact</v-card-title>
+              <v-card-subtitle>
+                <span>{{ pet.contact.vetContact.address }}</span>
+                <br />
+                <span>{{ pet.contact.vetContact.phone }}</span>
+              </v-card-subtitle>
             </v-col>
 
             <v-btn color="ml-12 green" fab small

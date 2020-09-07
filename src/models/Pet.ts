@@ -5,7 +5,10 @@ class Pet {
   breed: string;
   contact: {
     vetContact: Vet;
-    phone: '';
+    phone: string;
+    username: string;
+    name: string;
+    email: string;
   };
   description: string;
   dob: string;
@@ -26,6 +29,9 @@ class Pet {
         phone: '',
       },
       phone: '',
+      username: '',
+      name: '',
+      email: '',
     };
     this.description = '';
     this.dob = '';
