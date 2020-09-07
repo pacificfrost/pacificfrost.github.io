@@ -8,6 +8,7 @@ import GoogleMaps from '@/plugins/google-maps';
 export default {
   name: 'GoogleMap',
   data: () => ({
+    google: {},
     mapOptions: {
       zoom: 12,
       draggable: false,
@@ -22,8 +23,7 @@ export default {
   async mounted() {
     try {
       await GoogleMaps().then(google => {
-        this.map = new google.maps.Map(this.$el, this.mapOptions);
-        this.marker = new google.maps.Marker();
+        this.google = google;
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(this.showPosition);
@@ -40,9 +40,12 @@ export default {
         lng: position.coords.longitude,
       });
 
-      this.map.setCenter(this.mapOptions.center);
-      this.marker.setTitle('Pet');
-      this.marker.setPosition(this.mapOptions.center);
+      this.map = new this.google.maps.Map(this.$el, this.mapOptions);
+      this.marker = new this.google.maps.Marker({
+        position: this.mapOptions.center,
+        map: this.map,
+        title: 'Pet',
+      });
     },
   },
 };
