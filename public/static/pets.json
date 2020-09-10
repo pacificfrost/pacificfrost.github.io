@@ -1,0 +1,28 @@
+[
+  {
+    "breed": "Mixed",
+    "contact": {
+      "vetContact": {
+        "address": "9640 149 St NW, Edmonton, AB T5P 1J9",
+        "phone": "4031234567"
+      },
+      "phone": "4031234567",
+      "name": "Alisdair Frost",
+      "username": "pacificfrost",
+      "email": "alisdair.frost@gmail.com"
+    },
+    "description": "So cute, you want to boop that snoot! Has brown eyes, brown fur, and is quite lively!",
+    "dob": "03/19",
+    "id": "5e891729871jakshdh",
+    "images": [
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*"
+    ],
+    "location": [37.422, 122.084],
+    "name": "Elliot",
+    "social": true,
+    "type": "dog",
+    "weight": 55
+  }
+]
