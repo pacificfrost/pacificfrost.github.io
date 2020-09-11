@@ -1,4 +1,4 @@
-# pet-app
+# portfolio
 
 ## Project setup
 
