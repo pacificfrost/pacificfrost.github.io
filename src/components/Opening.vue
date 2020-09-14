@@ -1,11 +1,45 @@
 <template>
   <div class="opening-wrapper" id="openingWrapper">
     <div class="opening opening--a">
-      <v-btn light text rounded v-on:click="skipAnimation">skip</v-btn>
+      <v-row
+        align="center"
+        class="opening__row"
+        justify="center"
+        style="background-image: url(/static/coding.jpg)"
+      >
+        <h4 class="text-h3 opening__text">Development</h4>
+      </v-row>
     </div>
 
-    <div class="opening opening--b"></div>
-    <div class="opening opening--c"></div>
+    <div class="opening opening--b">
+      <v-row
+        align="center"
+        class="opening__row"
+        justify="center"
+        style="background-image: url(/static/design.jpg)"
+      >
+        <h4 class="text-h3 opening__text">Design</h4>
+      </v-row>
+    </div>
+
+    <div class="opening opening--c">
+      <v-row
+        align="center"
+        class="opening__row"
+        justify="center"
+        style="background-image: url(/static/digital-media.jpg)"
+      >
+        <h4 class="text-h3 opening__text">Digital Media</h4>
+      </v-row>
+    </div>
+
+    <v-btn
+      class="opening-wrapper__button ma-4"
+      color="#36e8c7"
+      rounded
+      v-on:click="skipAnimation()"
+      >skip</v-btn
+    >
   </div>
 </template>
 
@@ -18,11 +52,11 @@ export default Vue.extend({
   components: {},
   data: () => ({}),
   methods: {
-    onWrapperSkipEnd() {
-      const wrapper = document.getElementById('openingWrapper');
+    onWrapperSkipEnd(event: TransitionEvent) {
+      const target = event.target as HTMLElement;
 
-      if (wrapper) {
-        wrapper.style.display = 'none';
+      if (target.id === 'openingWrapper') {
+        target.style.display = 'none';
       }
     },
     skipAnimation() {
@@ -38,49 +72,83 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$lavender: #c76ae6;
+$teal: #36e8c7;
+$yellow: #f5f05e;
+
 .opening-wrapper {
   bottom: 0;
+  height: 100%;
   left: 0;
   opacity: 1;
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 3s ease;
+  transition: opacity 0.5s ease;
   z-index: 200;
 
   &--skipping {
     opacity: 0;
   }
+
+  &__button {
+    background-color: $teal;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+  }
 }
 
-.opening-wrapper .opening {
+.opening {
   bottom: 0;
   position: absolute;
   top: 0;
+
+  &__row {
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+  }
 }
 
 .opening--a {
   animation: openingAnimation1 5s ease 1 normal;
-  background-color: #f5f05e;
+  background-color: $yellow;
   left: 0;
-  right: 66%;
+  right: 66.66%;
   z-index: 2;
+
+  & .opening__text {
+    color: $yellow;
+    text-shadow: #ffffff 0 0 4px;
+  }
 }
 
 .opening--b {
   animation: openingAnimation2 7.5s ease 3.75s 1 normal;
-  background-color: #36e8c7;
-  left: 33%;
-  right: 33%;
+  background-color: $teal;
+  left: 33.33%;
+  right: 33.33%;
   z-index: 1;
+
+  & .opening__text {
+    color: $teal;
+    text-shadow: #000000 0 0 10px;
+  }
 }
 
 .opening--c {
   animation: openingAnimation3 10s ease 5s 1 normal;
-  background-color: #c76ae6;
-  left: 33%;
+  background-color: $lavender;
+  left: 66.66%;
   right: 0;
   z-index: 0;
+
+  & .opening__text {
+    color: $lavender;
+    text-shadow: #000000 0 0 10px;
+  }
 }
 
 @keyframes openingAnimation1 {
@@ -89,11 +157,11 @@ export default Vue.extend({
     right: 0;
   }
   75% {
-    background-color: #f5f05e;
+    background-color: $yellow;
     right: 0;
   }
   100% {
-    right: 66%;
+    right: 66.66%;
   }
 }
 
@@ -103,11 +171,11 @@ export default Vue.extend({
     right: 0;
   }
   75% {
-    background-color: #36e8c7;
+    background-color: $teal;
     right: 0;
   }
   100% {
-    right: 33%;
+    right: 33.33%;
   }
 }
 
@@ -119,7 +187,7 @@ export default Vue.extend({
     background-color: #000000;
   }
   75% {
-    background-color: #c76ae6;
+    background-color: $lavender;
   }
   100% {
   }
