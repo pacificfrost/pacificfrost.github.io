@@ -1,7 +1,9 @@
 <template>
   <v-app>
+    <!-- <p-opening></p-opening> -->
+
     <v-app-bar app color="white" elevate-on-scroll>
-      <pa-nav></pa-nav>
+      <p-nav></p-nav>
     </v-app-bar>
 
     <v-main>
@@ -17,11 +19,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import Nav from '@/components/Nav.vue';
+// import Opening from '@/components/Opening.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
-    'pa-nav': Nav,
+    'p-nav': Nav,
+    // 'p-opening': Opening,
   },
   data: () => ({}),
 });
