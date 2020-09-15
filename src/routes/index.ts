@@ -26,13 +26,14 @@ const router = new VueRouter({
   scrollBehavior: to => {
     const position = {} as ScrollPosition;
 
-    if (to.hash) {
-      position.offset = { y: 100, x: 0 };
-      position.selector = to.hash;
+    if (!to.hash) {
+      return { x: 0, y: 0 };
+    }
 
-      if (/^#\d/.test(to.hash) || document.querySelector(to.hash)) {
-        return position;
-      }
+    position.selector = to.hash;
+
+    if (/^#\d/.test(to.hash) || document.querySelector(to.hash)) {
+      return position;
     }
   },
 });
