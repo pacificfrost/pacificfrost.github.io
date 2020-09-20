@@ -15,7 +15,7 @@
 
       <v-row id="section3" justify="space-between" align="center">
         <v-col>
-          <h4 class="text-h4 text-center">Motiviations</h4>
+          <h4 class="text-h4 text-center">Motivations</h4>
         </v-col>
       </v-row>
 
