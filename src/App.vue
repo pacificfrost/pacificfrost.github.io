@@ -7,12 +7,24 @@
     </v-app-bar>
 
     <v-main>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-main>
 
-    <v-footer app></v-footer>
+    <v-btn
+      bottom
+      class="ma-4"
+      color="cyan"
+      dark
+      fab
+      fixed
+      right
+      small
+      to="/"
+      transition=""
+      v-scroll="setScrollPosition"
+      v-show="scrollPosition > 40"
+      ><v-icon>keyboard_arrow_up</v-icon></v-btn
+    >
   </v-app>
 </template>
 
@@ -27,6 +39,14 @@ export default Vue.extend({
     'p-nav': Nav,
     // 'p-opening': Opening,
   },
-  data: () => ({}),
+  data: () => ({
+    scrollPosition: 0,
+  }),
+  methods: {
+    setScrollPosition(event) {
+      const top = window.pageYOffset || event.target.scrollTop || 0;
+      this.scrollPosition = top;
+    },
+  },
 });
 </script>

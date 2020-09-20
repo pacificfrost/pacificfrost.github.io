@@ -71,7 +71,7 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $lavender: #c76ae6;
 $teal: #36e8c7;
 $yellow: #f5f05e;
