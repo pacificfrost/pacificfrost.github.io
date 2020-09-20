@@ -1,6 +1,6 @@
 <template>
   <v-col class="pa-0">
-    <!-- <p-hero></p-hero> -->
+    <p-hero></p-hero>
 
     <v-col>
       <v-row id="section1" justify="space-between" align="center">
@@ -31,13 +31,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import About from '@/views/About.vue';
-// import Hero from '@/views/Hero.vue';
+import Hero from '@/views/Hero.vue';
 
 export default Vue.extend({
   name: 'Home',
   components: {
     'p-about': About,
-    // 'p-hero': Hero,
+    'p-hero': Hero,
   },
   data: () => ({}),
 });
