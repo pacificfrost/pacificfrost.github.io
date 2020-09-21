@@ -1,10 +1,10 @@
 <template>
   <v-container>
     <v-col>
-      <h4 class="text-h4 text-center">About</h4>
-
       <v-row justify="center">
         <v-col cols="12" sm="10">
+          <h4 class="text-h4 text-center">About</h4>
+
           <p class="text-body-2 mb-4">
             {{ initContent.text }}
             <a
