@@ -1,52 +1,57 @@
 <template>
-  <v-col>
-    <h4 class="text-h4 text-center">About</h4>
-    <v-row justify="center">
-      <v-col cols="6">
-        <p class="text-body-2 mb-4">
-          {{ initContent.text }}
-          <a
-            @click="event => expandNext(event, -1)"
-            class="pa-0 pb-4"
-            href=""
-            >{{ initContent.expandText }}</a
-          >
-        </p>
+  <v-container>
+    <v-col>
+      <h4 class="text-h4 text-center">About</h4>
 
-        <div
-          v-for="({ text, expanded, expandText }, index) in content"
-          :key="index"
-        >
-          <v-expand-transition>
-            <p class="text-body-2 mb-4 shrink" v-show="expanded">
-              {{ text }}
-              <br />
-              <a
-                @click="event => expandNext(event, index)"
-                href=""
-                v-if="index !== content.length - 1"
-                >{{ expandText }}</a
+      <v-row justify="center">
+        <v-col cols="12" sm="10">
+          <p class="text-body-2 mb-4">
+            {{ initContent.text }}
+            <a
+              @click="event => expandNext(event, -1)"
+              class="pa-0 pb-4"
+              href=""
+              >{{ initContent.expandText }}</a
+            >
+          </p>
+
+          <div
+            v-for="({ text, expanded, expandText }, index) in content"
+            :key="index"
+          >
+            <v-expand-transition>
+              <p class="text-body-2 mb-4 shrink" v-show="expanded">
+                {{ text }}
+                <br />
+                <a
+                  @click="event => expandNext(event, index)"
+                  href=""
+                  v-if="index !== content.length - 1"
+                  >{{ expandText }}</a
+                >
+              </p>
+            </v-expand-transition>
+          </div>
+
+          <v-col class="py-0">
+            <v-row justify="end">
+              <v-btn
+                @click="() => expandAll()"
+                color="cyan"
+                dark
+                right
+                rounded
+                small
               >
-            </p>
-          </v-expand-transition>
-        </div>
-
-        <v-row justify="end">
-          <v-btn
-            @click="() => expandAll()"
-            color="cyan"
-            dark
-            right
-            rounded
-            small
-          >
-            <span v-if="allExpanded">Hide All</span>
-            <span v-if="!allExpanded">Reveal All</span>
-          </v-btn>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-col>
+                <span v-if="allExpanded">Hide All</span>
+                <span v-if="!allExpanded">Reveal All</span>
+              </v-btn>
+            </v-row>
+          </v-col>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-container>
 </template>
 
 <script lang="ts">
