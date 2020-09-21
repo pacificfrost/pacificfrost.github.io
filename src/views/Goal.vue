@@ -88,7 +88,7 @@
                 class="text-decoration-none ml-auto"
                 target="_blank"
                 v-if="goal.projectLink"
-                ><v-btn color="cyan" rounded dark>See Project</v-btn></a
+                ><v-btn color="cyan" rounded dark small>See Project</v-btn></a
               >
             </v-card-actions>
           </v-card>
