@@ -72,6 +72,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
 $lavender: #c76ae6;
 $teal: #36e8c7;
 $yellow: #f5f05e;
@@ -162,6 +164,22 @@ $yellow: #f5f05e;
   }
   100% {
     right: 66.66%;
+  }
+}
+
+@media screen and (min-width: map-deep-get($grid-breakpoints, 'sm')) {
+  @keyframes openingAnimation1 {
+    0% {
+      background-color: #000000;
+      right: 0;
+    }
+    75% {
+      background-color: $yellow;
+      right: 0;
+    }
+    100% {
+      right: 66.66%;
+    }
   }
 }
 

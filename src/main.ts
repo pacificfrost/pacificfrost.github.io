@@ -1,10 +1,9 @@
 import './registerServiceWorker';
 
-import App from '@/App.vue';
-
-import router from '@/routes';
-
 import Vue from 'vue';
+
+import App from '@/App.vue';
+import router from '@/routes';
 import vuetify from '@/plugins/vuetify';
 
 Vue.config.devtools = true;

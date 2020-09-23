@@ -50,3 +50,7 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+</style>
