@@ -137,7 +137,7 @@ export default Vue.extend({
           of 2020. I ended up being invited back to the first company, who had been
           acquired by a larger entity from Seattle. Since then, I have been
           working towards some side projects, one of which is to aid pet owners
-          by utilize NFC technology. As always, I have been studying hard, working
+          by utilizing NFC technology. As always, I have been studying hard, working
           harder.`,
         expanded: false,
         expandText:

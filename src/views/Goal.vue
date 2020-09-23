@@ -6,9 +6,9 @@
           <h4 class="text-h4 text-center">Goals</h4>
 
           <p class="text-body-2">
-            Now that you know a little more about me, in this section, I'd like
-            to show you a list of goals I'm working towards and where they
-            roughly sit, including links to view those goals.
+            Now that you know a little more about me, I'd like to show you a
+            list of goals I'm working towards and where they roughly sit,
+            including links to view those goals.
           </p>
         </v-col>
       </v-row>
