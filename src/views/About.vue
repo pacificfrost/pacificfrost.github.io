@@ -95,7 +95,7 @@ export default Vue.extend({
           the occasional side job to expand my skills outside of class. Nearing the
           end of my bachelor's in New Media, I was struggling both mentally and fiscally.
           Me, and my now fiancee, moved out of Lethbridge and in with her parents to
-          try and get stable jobs, and ultimately, take a break while we recouped our
+          try and get stable jobs, and ultimately, to take a break while we recouped our
           money and energy. Shortly after, I decided I would try and get a job - without
           a complete bachelors degree, as a web developer, and finally finish up the last of
           my degree online.`,
@@ -108,7 +108,7 @@ export default Vue.extend({
           get ready for a web development job and managed to score my first gig.
           Initially, the majority of work was graphic design, but I was later tasked
           to help design and speed up the WordPress site they were building. Now, I didn't
-          know much about WordPress, even more so when it came to coding for it, but I
+          know much about WordPress, even less so when it came to coding for it, but I
           managed to pick it up pretty quickly and identified some glaring issues
           in the source code of their in-house built theme and the admin panel.
           Some of these issues were enough to freeze the server when a user would
