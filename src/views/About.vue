@@ -106,7 +106,7 @@ export default Vue.extend({
       {
         text: `I was pretty determined to make it work, I studied independently online to
           get ready for a web development job and managed to score my first gig.
-          Initiall, the majority of work was graphic design, but I was later tasked
+          Initially, the majority of work was graphic design, but I was later tasked
           to help design and speed up the WordPress site they were building. Now, I didn't
           know much about WordPress, even more so when it came to coding for it, but I
           managed to pick it up pretty quickly and identified some glaring issues
@@ -120,11 +120,11 @@ export default Vue.extend({
         text: `Yes 🎉🎉🎉! I dramatically increased the performance of both the page speed
           and SEO visibility. Eventually, my manager felt I had adapted to the project
           so reliably, that I was moved into a full-fledged web application to aid in the
-          frontend. I began working with an AngularJS/Laravel stack. At this time, I hadn't
-          much experience with web-apps. Build tools, a Vagrant setup, componentization,
+          frontend and backend. I began working with an AngularJS/Laravel stack. At this time,
+          I hadn't much experience with web-apps. Build tools, a Vagrant setup, componentization,
           services, controllers... all of this was completely foreign to me! I studied
           hard, and worked harder to become as helpful to the team as possible. I started off
-          with clean up work, and finding ways to scope the SASS, but later was given more
+          with clean up work and finding ways to scope the SASS, but later was given more
           responsibility in designing and building new user interfaces and connecting version
           one of payment gateway system.`,
         expanded: false,
@@ -161,7 +161,7 @@ export default Vue.extend({
         text: `I still make videos from time to time 🎥, some photography 📷, drumming 🥁,
           guitar 🎸, and, on the odd occasion, I play around with audio production 🔉.
           I was actively involved for about a year with the Edmonton chapter of
-          FreeCodeCamp 💻 helping to host the occasional meetup and on occasion teaching
+          FreeCodeCamp 💻 helping to host the occasional meetup and teaching
           some of the basics of web development to the attendees. Did I mention,
           we have so many pets? At this point, we may as well consider opening our own
           petting zoo. Three cats 🐱, a dog 🐶, two ferrets 🍜, and two cockatiels 🐤.`,
