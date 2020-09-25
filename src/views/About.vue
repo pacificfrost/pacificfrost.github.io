@@ -63,46 +63,56 @@ export default Vue.extend({
   data: () => ({
     allExpanded: false,
     initContent: {
-      text: `Hi! I'm Alisdair. A developer by day... and night, too, I guess! I
-        first played with code back in the MySpace days (dating myself a bit
-        here) - I would manipulate my page design with HTML, CSS, and some Javascript,
-        but I never gave much thought into what I was doing; not thinking much
-        about it much since then, honestly,`,
-      expandText: 'until eventually...',
+      text: `Hi! I'm Alisdair. Welcome to my page!
+        This introduction will take you through my journey of how I became a
+        developer. What drives me, inspires me and what has motivated me in this career
+        path. I spent many years trying to figure out where I wanted to go. I was never
+        sure exactly what I wanted to do, but I found a great passion for development.
+        My first introduction to code was back in the MySpace days (dating myself a bit
+        here) - I would manipulate my page designs with HTML, CSS, and some Javascript,
+        but I never gave much thought into what I was doing or even if this was something
+        to expand upon.`,
+      expandText: 'Until many years later...',
     },
     content: [
       {
-        text: `I rediscovered development when I went to University. It was a weird
-          throwback - rediscovering some of that knowledge I learned almost 13 years prior.
-          Although, weirder still was that it wasn't the reason I was originally
-          at the University of Lethbridge. I went to study film. I took a liking
-          to video production when I immigrated to Canada in 2008. This followed after I tried
-          going into audio engineering. The thing is, the audio engineering
-          world is highly competitive, so I wanted to find another industry I
-          could play around with until I found work.`,
+        text: `I immigrated to Canada in 2008, hoping to go into music. I studied audio
+          engineering but what I didn't realize was that audio engineering is an incredibly
+          competitive field to work in. However, I was also interested film and design,
+          and came across the New Media degree at the University of Lethbridge,
+          it was kind of a "catch-all" degree for creative types. I figured with this
+          degree I could discover some passions, find a more stable career path, or
+          even a hidden talent in another field.`,
         expanded: false,
-        expandText: 'What reignited your interest in code? 🤔',
+        expandText: 'How did you go from film and design, to development? 🤔',
       },
       {
         text: `Web Design Fundamentals, with one of my favourite profs - Dana
-          Cooley! (Thanks, Dana!) I was all of a sudden hooked on code again.
-          I took some additional electives to bolster my knowledge in programming.
-          I started experimenting with bigger and bigger projects. Right
-          towards the end of my bachelor's in New Media, I ran out of cash.
-          Me, and my now fiancee, moved out of Lethbridge and in with
-          her parents to try and get stable jobs to start again.`,
+          Cooley! (Thanks, Dana!) This course had me instantly hooked - not only was
+          I able to grasp it pretty easily, I also enjoyed the content and assignments.
+          I took some additional electives to bolster my knowledge in programming,
+          began experimenting with bigger and bigger projects, and even took
+          the occasional side job to expand my skills outside of class. Nearing the
+          end of my bachelor's in New Media, I was struggling both mentally and fiscally.
+          Me, and my now fiancee, moved out of Lethbridge and in with her parents to
+          try and get stable jobs, and ultimately, take a break while we recouped our
+          money and energy. Shortly after, I decided I would try and get a job - without
+          a complete bachelors degree, as a web developer, and finally finish up the last of
+          my degree online.`,
         expanded: false,
-        expandText: 'How did that transition to working in Edmonton go? 🚗',
+        expandText:
+          'You had a goal, and a plan: Where did you go from there? 🔀',
       },
       {
-        text: `I was pretty determined to make it work, I studied for six months and
-          dived head-first into a web development gig. At first, the majority of work
-          was graphic design, but I was later tasked to help design and speed up the
-          WordPress site they were building. Now, I didn't know much about WordPress,
-          even more so when it came to coding for it, but I managed to pick it up pretty
-          quickly and find some glaring issues in the source code and the admin panel.
-          Some of these issues were enough to freeze the server due to one their main
-          marketing pages - yikes!`,
+        text: `I was pretty determined to make it work, I studied independently online to
+          get ready for a web development job and managed to score my first gig.
+          Initiall, the majority of work was graphic design, but I was later tasked
+          to help design and speed up the WordPress site they were building. Now, I didn't
+          know much about WordPress, even more so when it came to coding for it, but I
+          managed to pick it up pretty quickly and identified some glaring issues
+          in the source code of their in-house built theme and the admin panel.
+          Some of these issues were enough to freeze the server when a user would
+          try to access one of their main marketing pages - yikes!`,
         expanded: false,
         expandText: 'Nice, so you fixed that up? 😃',
       },
@@ -113,21 +123,26 @@ export default Vue.extend({
           frontend. I began working with an AngularJS/Laravel stack. At this time, I hadn't
           much experience with web-apps. Build tools, a Vagrant setup, componentization,
           services, controllers... all of this was completely foreign to me! I studied
-          hard, and worked harder to become as helpful to the team as possible.`,
+          hard, and worked harder to become as helpful to the team as possible. I started off
+          with clean up work, and finding ways to scope the SASS, but later was given more
+          responsibility in designing and building new user interfaces and connecting version
+          one of payment gateway system.`,
         expanded: false,
         expandText: 'And then? 👏',
       },
       {
-        text: `After a year or so, another opportunity arose. I moved to a new
-          company and began working remotely. They had heavy emphasis on code consistency,
-          strict code review, strong development practices, a required testing workflow,
-          and a fresh tech stack - Polymer, Koa, Postgres. Eight months later, I was promoted
-          to lead developer and was put in charge of reviewing and developing much
-          more complex tasks. The more challenging the task, the more content I was.
-          We later took on a new client who was using React/C# and were tasked to
-          help optimize and improve their frontend. Our original client adopted a
-          new workflow due to their rapid growth. They decided to use Odoo,
-          a Python application, for operations management.`,
+        text: `After almost two years with that project, another opportunity arose. I
+          moved to a new company and began working remotely. They had heavy emphasis
+          on code consistency, strict code review, strong development practices, a
+          required testing workflow, and a fresh tech stack - Polymer, Koa, Postgres.
+          Eight months later, I was promoted to lead developer and was put in charge
+          of reviewing and developing much more complex tasks. The more challenging
+          the task, the more content I was. We later took on a new client who was
+          using React/C# and were tasked to help optimize and improve their frontend.
+          Our original client adopted a new workflow due to their rapid growth and moved
+          away from our custom solution. They decided to use Odoo, a Python application,
+          for operations management. We were tasked with creating data migration solutions
+          from our application to the new platform.`,
         expanded: false,
         expandText: 'LGTM 👍',
       },
@@ -140,17 +155,16 @@ export default Vue.extend({
           by utilizing NFC technology. As always, I have been studying hard, working
           harder.`,
         expanded: false,
-        expandText:
-          'This is a lot about your development journey, do you have other interests? 🤷‍♀️',
+        expandText: 'Do you have other interests? 🤷‍♀️',
       },
       {
-        text: `I still make videos from time to time 🎥, photography 📷, drumming 🥁,
-          guitar 🎸, and, on the odd occasion, I play around with audio
-          production 🔉. And, even though this is related to development, I was
-          actively involved for about a year with the Edmonton chapter of
-          FreeCodeCamp 💻 helping to host the occasional meetup. We have so many pets!
-          At this point, we're only just shy of owing our own petting zoo. Three
-          cats 🐱, a dog 🐶, two ferrets 🍜, and two cockatiels 🐤.`,
+        text: `I still make videos from time to time 🎥, some photography 📷, drumming 🥁,
+          guitar 🎸, and, on the odd occasion, I play around with audio production 🔉.
+          I was actively involved for about a year with the Edmonton chapter of
+          FreeCodeCamp 💻 helping to host the occasional meetup and on occasion teaching
+          some of the basics of web development to the attendees. Did I mention,
+          we have so many pets? At this point, we may as well consider opening our own
+          petting zoo. Three cats 🐱, a dog 🐶, two ferrets 🍜, and two cockatiels 🐤.`,
         expanded: false,
       },
     ],
