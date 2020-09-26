@@ -12,14 +12,6 @@
       <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#projects"
         >Projects</v-btn
       >
-
-      <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#"
-        >Motivations</v-btn
-      >
-
-      <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#"
-        >Achievements</v-btn
-      >
     </v-row>
 
     <v-spacer class="d-sm-none"></v-spacer>
@@ -43,14 +35,6 @@
 
           <v-list-item to="/#Projects">
             <v-list-item-title>Projects</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item to="/#">
-            <v-list-item-title>Motivations</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item to="/#">
-            <v-list-item-title>Achievements</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
