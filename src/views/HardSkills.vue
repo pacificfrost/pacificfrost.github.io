@@ -1,7 +1,13 @@
 <template>
   <v-container>
     <v-row align="center" class="carousel">
-      <v-btn depressed fab left small @click="showPrevious()"
+      <v-btn
+        @click="showPrevious()"
+        class="carousel__nav carousel__nav--left"
+        depressed
+        fab
+        left
+        small
         ><v-icon>keyboard_arrow_left</v-icon></v-btn
       >
 
@@ -12,9 +18,9 @@
         tag="div"
       >
         <v-col v-if="slide === 0 && currentSlide === 0" key="0">
-          <h5 class="text-h5 text-center mb-2">Development</h5>
+          <h5 class="text-h5 text-center mb-4">Development</h5>
 
-          <v-card class="mx-auto pa-4 text-center">
+          <v-card class="mx-auto pa-2 pa-md-4">
             <v-card-title
               >{{
                 Math.max(...Object.values(skills.development.specific))
@@ -23,6 +29,13 @@
             >
 
             <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
+              <v-card-subtitle>
+                <v-icon color="#c76ae6">arrow_upward</v-icon> ~4 years with Git
+                <br />
+                <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year with
+                LitElement, React, Typescript
+              </v-card-subtitle>
+
               <v-sparkline
                 :auto-draw-duration="graphSettings.autoDrawDuration"
                 :color="graphSettings.color"
@@ -40,6 +53,13 @@
             </v-sheet>
 
             <v-sheet color="rgba(0, 0, 0, .02)">
+              <v-card-subtitle>
+                <v-icon color="#c76ae6">arrow_upward</v-icon> ~6 years with CSS,
+                HTML
+                <br />
+                <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year MongoDB
+              </v-card-subtitle>
+
               <v-sparkline
                 :auto-draw-duration="graphSettings.autoDrawDuration"
                 :color="graphSettings.color"
@@ -58,9 +78,9 @@
         </v-col>
 
         <v-col v-if="slide === 1 && currentSlide === 1" key="1">
-          <h5 class="text-h5 text-center mb-2">Art and Design</h5>
+          <h5 class="text-h5 text-center mb-4">Art and Design</h5>
 
-          <v-card class="mx-auto pa-4 text-center">
+          <v-card class="mx-auto pa-4">
             <v-card-title
               >{{ Math.max(...Object.values(skills.design)) }} years of
               experience</v-card-title
@@ -86,9 +106,9 @@
         </v-col>
 
         <v-col v-if="slide === 2 && currentSlide === 2" key="2">
-          <h5 class="text-h5 text-center mb-2">Digital Media</h5>
+          <h5 class="text-h5 text-center mb-4">Digital Media</h5>
 
-          <v-card class="mx-auto pa-4 text-center">
+          <v-card class="mx-auto pa-4">
             <v-card-title
               >{{
                 Math.max(
@@ -136,7 +156,13 @@
         </v-col>
       </transition-group>
 
-      <v-btn depressed fab small right @click="showNext"
+      <v-btn
+        @click="showNext"
+        class="carousel__nav carousel__nav--right"
+        depressed
+        fab
+        right
+        small
         ><v-icon>keyboard_arrow_right</v-icon></v-btn
       >
     </v-row>
@@ -157,7 +183,7 @@ export default Vue.extend({
     graphSettings: {
       autoDrawDuration: 600,
       color: '#c76ae6',
-      gradient: ['#c76ae6', '#f5f05e'],
+      gradient: ['#c76ae6', '#36e8c7'],
       padding: '24',
       height: 100,
       labelSize: '5',
@@ -180,7 +206,7 @@ export default Vue.extend({
         ['InDesign']: 4,
         ['Photography']: 8,
         ['Photoshop']: 9,
-        ['Traditional Media']: 18,
+        ['Traditional Media']: 8,
       },
       development: {
         specific: {
@@ -235,8 +261,35 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '~vuetify/src/styles/styles.sass';
+
 .carousel {
   position: relative;
+
+  &__nav {
+    background-color: transparent !important;
+    border-radius: 0;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 2;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    @media screen and (min-width: map-deep-get($grid-breakpoints, 'sm')) {
+      position: relative;
+      z-index: 0;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
 }
 
 .charts {
