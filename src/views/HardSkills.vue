@@ -33,7 +33,7 @@
                 <v-icon color="#c76ae6">arrow_upward</v-icon> ~4 years with Git
                 <br />
                 <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year with
-                LitElement, React, Typescript
+                LitElement, React, Typescript, MongoDB
               </v-card-subtitle>
 
               <v-sparkline
@@ -57,7 +57,8 @@
                 <v-icon color="#c76ae6">arrow_upward</v-icon> ~6 years with CSS,
                 HTML
                 <br />
-                <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year MongoDB
+                <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year NoSQL,
+                Ruby
               </v-card-subtitle>
 
               <v-sparkline
@@ -110,13 +111,8 @@
 
           <v-card class="mx-auto pa-4">
             <v-card-title
-              >{{
-                Math.max(
-                  ...Object.values(skills.digitalMedia.audio),
-                  ...Object.values(skills.digitalMedia.film)
-                )
-              }}
-              years of experience</v-card-title
+              >{{ Math.max(...Object.values(skills.digitalMedia)) }} years of
+              experience</v-card-title
             >
 
             <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
@@ -126,26 +122,9 @@
                 :gradient="graphSettings.gradient"
                 :height="graphSettings.height"
                 :label-size="graphSettings.labelSize"
-                :labels="Object.keys(skills.digitalMedia.audio)"
+                :labels="Object.keys(skills.digitalMedia)"
                 :padding="graphSettings.padding"
-                :value="Object.values(skills.digitalMedia.audio)"
-                auto-draw
-                show-labels
-                smooth
-                stroke-linecap="round"
-              ></v-sparkline>
-            </v-sheet>
-
-            <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
-              <v-sparkline
-                :auto-draw-duration="graphSettings.autoDrawDuration"
-                :color="graphSettings.color"
-                :gradient="graphSettings.gradient"
-                :height="graphSettings.height"
-                :label-size="graphSettings.labelSize"
-                :labels="Object.keys(skills.digitalMedia.film)"
-                :padding="graphSettings.padding"
-                :value="Object.values(skills.digitalMedia.film)"
+                :value="Object.values(skills.digitalMedia)"
                 auto-draw
                 show-labels
                 smooth
@@ -189,19 +168,8 @@ export default Vue.extend({
       labelSize: '5',
     },
     skills: {
-      digitalMedia: {
-        audio: {
-          ['AuditionCC']: 4,
-          ['FLStudio']: 2,
-          ['ProTools']: 5,
-        },
-        film: {
-          ['After Effects']: 4,
-          ['Cinematography']: 5,
-          ['Premiere Pro']: 8,
-        },
-      },
       design: {
+        ['Figma']: 2,
         ['Illustrator']: 10,
         ['InDesign']: 4,
         ['Photography']: 8,
@@ -210,11 +178,12 @@ export default Vue.extend({
       },
       development: {
         specific: {
-          ['AngularJS']: 3,
+          ['AngularJS']: 4,
           ['Git']: 4,
           ['Laravel']: 2,
-          ['LitElement']: 1,
-          ['MySQL']: 2,
+          ['Lit']: 1,
+          ['MongoDB']: 1,
+          ['MySQL']: 3,
           ['NodeJS']: 3,
           ['Polymer']: 2.5,
           ['Postgres']: 2,
@@ -227,12 +196,20 @@ export default Vue.extend({
           ['CSS']: 6,
           ['HTML']: 6,
           ['Javascript']: 5,
-          ['MongoDB']: 1,
+          ['NoSQL']: 1,
           ['PHP']: 4,
           ['Ruby']: 0.5,
           ['SCSS']: 4,
           ['SQL']: 3,
         },
+      },
+      digitalMedia: {
+        ['After Effects']: 4,
+        ['AuditionCC']: 4,
+        ['Cinematography']: 5,
+        ['FLStudio']: 2,
+        ['Premiere Pro']: 8,
+        ['ProTools']: 3,
       },
     },
     currentSlide: 0,
