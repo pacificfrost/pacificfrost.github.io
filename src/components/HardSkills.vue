@@ -14,7 +14,8 @@
       >
 
       <transition-group
-        @leave="leave"
+        @after-leave="afterLeave"
+        @after-enter="afterEnter"
         class="d-flex flex-grow-1"
         name="charts"
         tag="div"
@@ -24,11 +25,12 @@
           key="0"
           v-if="slide === 0 && currentSlide === 0"
         >
-          <h5 class="text-h5 text-center mb-4">Development</h5>
-
-          <v-card-title
-            >{{ Math.max(...Object.values(skills.development.specific)) }} years
-            of experience</v-card-title
+          <v-card-title class="pt-0">Development</v-card-title>
+          <v-card-subtitle
+            >Total years of experience:
+            {{
+              Math.max(...Object.values(skills.development.specific))
+            }}</v-card-subtitle
           >
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
@@ -81,15 +83,14 @@
         </v-card>
 
         <v-card
-          class="mx-auto pa-4"
+          class="mx-auto pa-4 carousel__card"
           key="1"
           v-if="slide === 1 && currentSlide === 1"
         >
-          <h5 class="text-h5 text-center mb-4">Art and Design</h5>
-
-          <v-card-title
-            >{{ Math.max(...Object.values(skills.design)) }} years of
-            experience</v-card-title
+          <v-card-title class="pt-0">Design</v-card-title>
+          <v-card-subtitle
+            >Total years of experience:
+            {{ Math.max(...Object.values(skills.design)) }}</v-card-subtitle
           >
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
@@ -111,16 +112,16 @@
         </v-card>
 
         <v-card
-          class="mx-auto pa-4"
+          class="mx-auto pa-4 carousel__card"
           key="2"
           v-if="slide === 2 && currentSlide === 2"
         >
-          <h5 class="text-h5 text-center mb-4">
-            Digital Media
-          </h5>
-          <v-card-title
-            >{{ Math.max(...Object.values(skills.digitalMedia)) }} years of
-            experience</v-card-title
+          <v-card-title class="pt-0">Digital Media</v-card-title>
+          <v-card-subtitle
+            >Total years of experience:
+            {{
+              Math.max(...Object.values(skills.digitalMedia))
+            }}</v-card-subtitle
           >
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
@@ -220,25 +221,35 @@ export default Vue.extend({
       },
     },
     currentSlide: 0,
+    canTransitionNext: true,
     slide: 0,
   }),
   methods: {
+    afterLeave() {
+      this.currentSlide = this.slide;
+    },
+    afterEnter() {
+      this.canTransitionNext = true;
+    },
     showNext() {
+      if (!this.canTransitionNext) {
+        return;
+      }
+
+      this.canTransitionNext = false;
+
       this.slide =
         this.currentSlide === this.slidesLength ? 0 : this.currentSlide + 1;
     },
     showPrevious() {
+      if (!this.canTransitionNext) {
+        return;
+      }
+
+      this.canTransitionNext = false;
+
       this.slide =
         this.currentSlide === 0 ? this.slidesLength : this.currentSlide - 1;
-    },
-    leave(el) {
-      const transitionEnd = () => {
-        this.currentSlide = this.slide;
-      };
-
-      if (!el.ontransitionend) {
-        el.addEventListener('transitionend', transitionEnd);
-      }
     },
   },
 });
