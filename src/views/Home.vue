@@ -5,7 +5,7 @@
     <v-container>
       <v-col>
         <v-row id="resume" justify="space-between" align="center">
-          <p-hard-skills></p-hard-skills>
+          <p-resume></p-resume>
         </v-row>
 
         <v-row id="about" justify="space-between" align="center">
@@ -23,15 +23,15 @@
 <script lang="ts">
 import Vue from 'vue';
 import About from '@/views/About.vue';
-import HardSkills from '@/views/HardSkills.vue';
 import Hero from '@/views/Hero.vue';
 import Projects from '@/views/Projects.vue';
+import Resume from '@/views/Resume.vue';
 
 export default Vue.extend({
   name: 'Home',
   components: {
     'p-about': About,
-    'p-hard-skills': HardSkills,
+    'p-resume': Resume,
     'p-projects': Projects,
     'p-hero': Hero,
   },
