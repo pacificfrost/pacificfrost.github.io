@@ -14,7 +14,7 @@
               </v-row>
 
               <v-row>
-                <p class="mb-0">
+                <p class="mb-0 timeline-card__title">
                   <small>{{ education.certification }}</small>
                 </p>
               </v-row>

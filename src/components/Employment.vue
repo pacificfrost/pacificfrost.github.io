@@ -18,7 +18,7 @@
               </v-row>
 
               <v-row>
-                <p class="mb-0">
+                <p class="mb-0 timeline-card__title">
                   <small>{{ employment.role }}</small>
                 </p>
               </v-row>
