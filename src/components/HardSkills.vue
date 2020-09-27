@@ -26,12 +26,6 @@
           v-if="slide === 0 && currentSlide === 0"
         >
           <v-card-title class="pt-0">Development</v-card-title>
-          <v-card-subtitle
-            >Total years of experience:
-            {{
-              Math.max(...Object.values(skills.development.specific))
-            }}</v-card-subtitle
-          >
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
             <v-card-subtitle>
