@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h5 class="text-h5 text-center mb-4">Work History</h5>
+  <div class="mx-auto">
+    <h5 class="text-h5 text-center my-4">Work History</h5>
 
     <v-timeline :dense="$vuetify.breakpoint.smAndDown" align-top>
       <v-timeline-item

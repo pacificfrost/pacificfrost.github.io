@@ -35,10 +35,13 @@
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
             <v-card-subtitle>
-              <v-icon color="#c76ae6">arrow_upward</v-icon> ~4 years with Git
+              <v-icon color="#c76ae6">arrow_upward</v-icon
+              >{{ Math.max(...Object.values(skills.development.specific)) }}
+              years
               <br />
-              <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year with
-              LitElement, React, Typescript, MongoDB
+              <v-icon color="#36e8c7">arrow_downward</v-icon
+              >{{ Math.min(...Object.values(skills.development.specific)) }}
+              year or less
             </v-card-subtitle>
 
             <v-sparkline
@@ -59,11 +62,13 @@
 
           <v-sheet color="rgba(0, 0, 0, .02)">
             <v-card-subtitle>
-              <v-icon color="#c76ae6">arrow_upward</v-icon> ~6 years with CSS,
-              HTML
+              <v-icon color="#c76ae6">arrow_upward</v-icon
+              >{{ Math.max(...Object.values(skills.development.languages)) }}
+              years
               <br />
-              <v-icon color="#36e8c7">arrow_downward</v-icon> ~1 year NoSQL,
-              Ruby
+              <v-icon color="#36e8c7">arrow_downward</v-icon
+              >{{ Math.min(...Object.values(skills.development.languages)) }}
+              year or less
             </v-card-subtitle>
 
             <v-sparkline
@@ -88,10 +93,15 @@
           v-if="slide === 1 && currentSlide === 1"
         >
           <v-card-title class="pt-0">Design</v-card-title>
-          <v-card-subtitle
-            >Total years of experience:
-            {{ Math.max(...Object.values(skills.design)) }}</v-card-subtitle
-          >
+
+          <v-card-subtitle>
+            <v-icon color="#c76ae6">arrow_upward</v-icon
+            >{{ Math.max(...Object.values(skills.design)) }}
+            years
+            <br />
+            <v-icon color="#36e8c7">arrow_downward</v-icon
+            >{{ Math.min(...Object.values(skills.design)) }} year or less
+          </v-card-subtitle>
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
             <v-sparkline
@@ -117,12 +127,15 @@
           v-if="slide === 2 && currentSlide === 2"
         >
           <v-card-title class="pt-0">Digital Media</v-card-title>
-          <v-card-subtitle
-            >Total years of experience:
-            {{
-              Math.max(...Object.values(skills.digitalMedia))
-            }}</v-card-subtitle
-          >
+
+          <v-card-subtitle>
+            <v-icon color="#c76ae6">arrow_upward</v-icon
+            >{{ Math.max(...Object.values(skills.digitalMedia)) }}
+            years
+            <br />
+            <v-icon color="#36e8c7">arrow_downward</v-icon
+            >{{ Math.min(...Object.values(skills.digitalMedia)) }} year or less
+          </v-card-subtitle>
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
             <v-sparkline

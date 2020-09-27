@@ -4,15 +4,15 @@
 
     <v-container>
       <v-col>
-        <v-row id="resume" justify="space-between" align="center">
+        <v-row id="resume" justify="center" align="center">
           <p-resume></p-resume>
         </v-row>
 
-        <v-row id="about" justify="space-between" align="center">
+        <v-row id="about" justify="center" align="center">
           <p-about></p-about>
         </v-row>
 
-        <v-row id="projects" justify="space-between" align="center">
+        <v-row id="projects" justify="center" align="center">
           <p-projects></p-projects>
         </v-row>
       </v-col>
