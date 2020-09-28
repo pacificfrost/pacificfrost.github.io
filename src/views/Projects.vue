@@ -3,12 +3,12 @@
     <v-col>
       <v-row justify="center">
         <v-col cols="12" sm="10">
-          <h4 class="text-h4 text-center">Goals</h4>
+          <h4 class="text-h4 text-center mb-2">Projects</h4>
 
           <p class="text-body-2">
             Now that you know a little more about me, I'd like to show you a
-            list of goals I'm working towards and where they roughly sit,
-            including links to view those goals.
+            list of projects I'm working towards and where they roughly sit,
+            including links to view those projects.
           </p>
         </v-col>
       </v-row>
@@ -17,12 +17,12 @@
         <v-col
           :key="index"
           class="mx-auto"
-          v-for="(goal, index) in sortedGoalsByCreatedDate"
+          v-for="(project, index) in sortedProjectsByCreatedDate"
         >
           <v-card class="mx-auto" max-width="340">
             <v-img
               :src="
-                goal.imgUrl ||
+                project.imgUrl ||
                   'https://cdn.vuetifyjs.com/images/cards/docks.jpg'
               "
               class="white--text align-end"
@@ -31,22 +31,22 @@
               <v-col>
                 <v-row align="end">
                   <v-col class="d-flex">
-                    <h6 class="text-h6 mr-auto">{{ goal.title }}</h6>
+                    <h6 class="text-h6 mr-auto">{{ project.title }}</h6>
                   </v-col>
 
                   <div>
                     <v-col>
                       <v-chip
                         :color="
-                          goal.progress === 100
+                          project.progress === 100
                             ? 'green'
-                            : goal.status === 'Planning'
+                            : project.status === 'Planning'
                             ? 'orange'
                             : 'light-blue'
                         "
                         dark
                         small
-                        >{{ goal.status }}</v-chip
+                        >{{ project.status }}</v-chip
                       >
                     </v-col>
                   </div>
@@ -55,15 +55,15 @@
             </v-img>
 
             <v-progress-linear
-              :buffer-value="getTimelineProgress(goal)"
+              :buffer-value="getTimelineProgress(project)"
               :color="
-                goal.progress === 100
+                project.progress === 100
                   ? 'green'
-                  : goal.status === 'Planning'
+                  : project.status === 'Planning'
                   ? 'orange'
                   : 'light-blue'
               "
-              :value="goal.progress"
+              :value="project.progress"
               height="25"
               striped
             >
@@ -73,21 +73,23 @@
             </v-progress-linear>
 
             <v-card-subtitle class="pb-0">
-              {{ formatDate(goal.startDate) }}
-              <span v-if="goal.endDate">- {{ formatDate(goal.endDate) }}</span>
+              {{ formatDate(project.startDate) }}
+              <span v-if="project.endDate"
+                >- {{ formatDate(project.endDate) }}</span
+              >
             </v-card-subtitle>
 
             <v-card-text class="text--primary">
-              <div>{{ goal.description }}</div>
+              <div>{{ project.description }}</div>
             </v-card-text>
 
             <v-card-actions>
               <a
-                :href="goal.projectLink"
-                :alt="`See Project: ${goal.title}`"
+                :href="project.projectLink"
+                :alt="`See Project: ${project.title}`"
                 class="text-decoration-none ml-auto"
                 target="_blank"
-                v-if="goal.projectLink"
+                v-if="project.projectLink"
                 ><v-btn color="cyan" rounded dark small>See Project</v-btn></a
               >
             </v-card-actions>
@@ -102,7 +104,7 @@
 import Vue from 'vue';
 import { compareDesc, differenceInDays, format, parse } from 'date-fns';
 
-type Goal = {
+type Project = {
   description: string;
   endDate: string;
   imgUrl: string | URL;
@@ -116,12 +118,12 @@ type Goal = {
 const dateFormat = 'yyyy/MM/dd';
 
 export default Vue.extend({
-  name: 'Goal',
+  name: 'Project',
   computed: {
-    sortedGoalsByCreatedDate: function() {
+    sortedProjectsByCreatedDate: function() {
       const today = new Date();
 
-      return this.goals.slice().sort((a, b) => {
+      return this.projects.slice().sort((a, b) => {
         return compareDesc(
           parse(a.startDate, dateFormat, today),
           parse(b.startDate, dateFormat, today)
@@ -131,7 +133,7 @@ export default Vue.extend({
   },
   components: {},
   data: () => ({
-    goals: [
+    projects: [
       {
         description: `You're currently viewing this project! If you would like to see the source code, click the button below.`,
         endDate: '2020/10/15',
@@ -179,15 +181,15 @@ export default Vue.extend({
     formatDate(date: string) {
       return format(parse(date, dateFormat, new Date()), 'do MMM, yyyy');
     },
-    getTimelineProgress(goal: Goal) {
-      if (!goal.endDate) {
+    getTimelineProgress(project: Project) {
+      if (!project.endDate) {
         return 0;
       }
 
       const today = new Date();
 
-      const startParse = parse(goal.startDate, dateFormat, today);
-      const endParse = parse(goal.endDate, dateFormat, today);
+      const startParse = parse(project.startDate, dateFormat, today);
+      const endParse = parse(project.endDate, dateFormat, today);
 
       const startEndDiff = differenceInDays(endParse, startParse);
       const startTodayDiff = differenceInDays(today, startParse);
