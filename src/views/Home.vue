@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 import About from '@/views/About.vue';
 import Hero from '@/views/Hero.vue';
 import Projects from '@/views/Projects.vue';

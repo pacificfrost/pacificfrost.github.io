@@ -16,8 +16,8 @@
           </p>
 
           <div
-            v-for="({ text, expanded, expandText }, index) in content"
             :key="index"
+            v-for="({ text, expanded, expandText }, index) in content"
           >
             <v-expand-transition>
               <p class="text-body-2 mb-4 shrink" v-show="expanded">
@@ -35,14 +35,7 @@
 
           <v-col class="py-0">
             <v-row justify="end">
-              <v-btn
-                @click="() => expandAll()"
-                color="cyan"
-                dark
-                right
-                rounded
-                small
-              >
+              <v-btn @click="expandAll()" color="cyan" dark right rounded small>
                 <span v-if="allExpanded">Hide All</span>
                 <span v-if="!allExpanded">Reveal All</span>
               </v-btn>

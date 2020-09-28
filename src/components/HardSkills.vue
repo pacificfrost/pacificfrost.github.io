@@ -21,8 +21,9 @@
         tag="div"
       >
         <v-card
-          class="pa-2 pa-md-4 carousel__card"
+          class="pa-2 pa-md-4 mx-auto carousel__card"
           key="0"
+          max-width="800"
           v-if="slide === 0 && currentSlide === 0"
         >
           <v-card-title class="pt-0">Development</v-card-title>
@@ -34,8 +35,15 @@
               years
               <br />
               <v-icon color="#36e8c7">arrow_downward</v-icon
-              >{{ Math.min(...Object.values(skills.development.specific)) }}
-              year or less
+              >{{
+                Math.min(...Object.values(skills.development.specific))
+              }}
+              year{{
+                Math.min(...Object.values(skills.development.specific)) > 1
+                  ? 's'
+                  : ''
+              }}
+              or less
             </v-card-subtitle>
 
             <v-sparkline
@@ -84,6 +92,7 @@
         <v-card
           class="mx-auto pa-4 carousel__card"
           key="1"
+          max-width="800"
           v-if="slide === 1 && currentSlide === 1"
         >
           <v-card-title class="pt-0">Design</v-card-title>
@@ -94,7 +103,10 @@
             years
             <br />
             <v-icon color="#36e8c7">arrow_downward</v-icon
-            >{{ Math.min(...Object.values(skills.design)) }} year or less
+            >{{ Math.min(...Object.values(skills.design)) }} year{{
+              Math.min(...Object.values(skills.design)) > 1 ? 's' : ''
+            }}
+            or less
           </v-card-subtitle>
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">
@@ -118,6 +130,7 @@
         <v-card
           class="mx-auto pa-4 carousel__card"
           key="2"
+          max-width="800"
           v-if="slide === 2 && currentSlide === 2"
         >
           <v-card-title class="pt-0">Digital Media</v-card-title>
@@ -128,7 +141,10 @@
             years
             <br />
             <v-icon color="#36e8c7">arrow_downward</v-icon
-            >{{ Math.min(...Object.values(skills.digitalMedia)) }} year or less
+            >{{ Math.min(...Object.values(skills.digitalMedia)) }} year{{
+              Math.min(...Object.values(skills.digitalMedia)) > 1 ? 's' : ''
+            }}
+            or less
           </v-card-subtitle>
 
           <v-sheet class="mb-4" color="rgba(0, 0, 0, .02)">

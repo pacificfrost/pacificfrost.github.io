@@ -16,34 +16,36 @@
 
     <v-spacer class="d-sm-none"></v-spacer>
 
-    <v-row class="d-sm-none" justify="end" align="center">
-      <v-menu bottom left>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn light icon v-bind="attrs" v-on="on">
-            <v-icon>menu</v-icon>
-          </v-btn>
-        </template>
+    <v-row class="d-sm-none" justify="space-between" align="center">
+      <v-col class="pa-0">
+        <v-menu bottom left>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn light icon v-bind="attrs" v-on="on">
+              <v-icon>menu</v-icon>
+            </v-btn>
+          </template>
 
-        <v-list>
-          <v-list-item to="/#resume">
-            <v-list-item-title>Resume</v-list-item-title>
-          </v-list-item>
+          <v-list>
+            <v-list-item to="/#resume">
+              <v-list-item-title>Resume</v-list-item-title>
+            </v-list-item>
 
-          <v-list-item to="/#">
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item>
+            <v-list-item to="/#about">
+              <v-list-item-title>About</v-list-item-title>
+            </v-list-item>
 
-          <v-list-item to="/#Projects">
-            <v-list-item-title>Projects</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+            <v-list-item to="/#projects">
+              <v-list-item-title>Projects</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-col>
 
-      <v-spacer></v-spacer>
+      <v-col class="pa-0" cols="8">
+        <h2 class="text-center">Alisdair Frost</h2>
+      </v-col>
 
-      <h2>Alisdair Frost</h2>
-
-      <v-spacer></v-spacer>
+      <v-col class="pa-0"></v-col>
     </v-row>
   </v-container>
 </template>
