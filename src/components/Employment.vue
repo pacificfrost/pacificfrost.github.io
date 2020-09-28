@@ -178,7 +178,7 @@ export default Vue.extend({
           'Reduced time spent in review by implementing various tools to workflow',
           'Wrote several server scripts for data management to reduce manual data entry',
         ],
-        company: 'TransACT Communications, LTD.',
+        company: 'Stet Solutions',
         description:
           'Designs and builds both frontend and backend web applications, handles UX/UI designs, assists in database architecture.',
         endDate: '2020/02',
@@ -206,7 +206,7 @@ export default Vue.extend({
           'Adobe Photoshop',
           'Figma',
         ],
-        role: 'Lead Web Developer',
+        role: 'Lead Developer',
         startDate: '2019/05',
       },
       {
