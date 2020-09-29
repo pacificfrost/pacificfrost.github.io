@@ -35,7 +35,7 @@
 
           <v-col class="py-0">
             <v-row justify="end">
-              <v-btn @click="expandAll()" color="cyan" dark right rounded small>
+              <v-btn @click="expandAll()" color="teal" dark right rounded small>
                 <span v-if="allExpanded">Hide All</span>
                 <span v-if="!allExpanded">Reveal All</span>
               </v-btn>

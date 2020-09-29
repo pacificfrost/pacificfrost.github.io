@@ -2,7 +2,7 @@
   <v-col cols="12" sm="10">
     <!-- <v-row justify="center">
       <form method="get" action="/AlisdairFrostResume.pdf" target="_blank">
-        <v-btn raised rounded color="cyan" type="submit" small dark
+        <v-btn raised rounded color="teal" type="submit" small dark
           >Download PDF Resume</v-btn
         >
       </form>

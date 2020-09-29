@@ -1,5 +1,14 @@
 <template>
-  <div class="hero"></div>
+  <div class="hero">
+    <v-img
+      class="fill-height"
+      transition="fade"
+      lazy-src="/img/media/field-lazy.png"
+      src="/img/media/field-full.png"
+    >
+      <v-row class="fill-height"> </v-row>
+    </v-img>
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,10 +22,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$yellow: #f5f05e;
-
 .hero {
-  background-color: $yellow;
   height: calc(100vh - 56px);
 
   @media screen and (min-width: 960px) {

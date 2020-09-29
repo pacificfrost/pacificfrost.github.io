@@ -38,11 +38,11 @@
     <v-spacer class="d-sm-none"></v-spacer>
 
     <v-row class="d-sm-none" justify="space-between" align="center">
-      <v-col class="pa-0">
+      <v-col class="pl-0">
         <v-menu bottom left>
           <template v-slot:activator="{ on, attrs }">
             <v-btn light icon v-bind="attrs" v-on="on">
-              <v-icon>menu</v-icon>
+              <v-icon color="teal">menu</v-icon>
             </v-btn>
           </template>
 
@@ -71,11 +71,21 @@
         </v-menu>
       </v-col>
 
-      <v-col class="pa-0" cols="8">
-        <h2 class="text-center">Alisdair Frost</h2>
+      <v-col cols="8">
+        <h2 class="text-center teal--text darken-4--text">Alisdair Frost</h2>
       </v-col>
 
-      <v-col class="pa-0"></v-col>
+      <v-col>
+        <v-row justify="end">
+          <v-img
+            contain
+            lazy-src="/img/icons/favicon-16x16.png"
+            max-height="32"
+            max-width="32"
+            src="/img/icons/favicon-32x32.png"
+          ></v-img>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>

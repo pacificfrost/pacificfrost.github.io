@@ -180,7 +180,7 @@ export default Vue.extend({
         ],
         company: 'Stet Solutions',
         description:
-          'Designs and builds both frontend and backend web applications, handles UX/UI designs, assists in database architecture.',
+          'Helped pave the direction and foundations of new work. Delegated tasks down the chain from supervisor and aided with onboarding of new developers.',
         endDate: '2020/02',
         expanded: false,
         location: 'Remote',
