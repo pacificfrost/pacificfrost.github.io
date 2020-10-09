@@ -19,7 +19,11 @@ if (process.env.NODE_ENV === 'production') {
     updatefound() {
       console.log('New content is downloading.');
     },
-    updated() {
+    updated(registration) {
+      document.dispatchEvent(
+        new CustomEvent('sw-updated', { detail: registration })
+      );
+
       console.log('New content is available; please refresh.');
     },
     offline() {

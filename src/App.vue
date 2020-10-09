@@ -26,6 +26,13 @@
       v-show="scrollPosition > 40"
       ><v-icon>keyboard_arrow_up</v-icon></v-btn
     >
+
+    <v-snackbar bottom right :value="updateExists" :timeout="0" color="primary">
+      An update is available
+      <v-btn text @click="refreshApp">
+        Update
+      </v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -33,6 +40,8 @@
 import Vue from 'vue';
 import Nav from '@/components/Nav.vue';
 import Opening from '@/components/Opening.vue';
+
+import swUpdate from '@/mixins/update.mixin.ts';
 
 export default Vue.extend({
   name: 'App',
@@ -59,6 +68,7 @@ export default Vue.extend({
       this.scrollPosition = top;
     },
   },
+  mixins: [swUpdate],
 });
 </script>
 
