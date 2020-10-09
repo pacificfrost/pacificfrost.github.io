@@ -23,7 +23,11 @@ const router = new VueRouter({
   base: process.env.NODE_ENV === 'production' ? '/' : '/',
   mode: 'history',
   routes,
-  scrollBehavior: to => {
+  scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
     const position = {} as ScrollPosition;
 
     if (!to.hash) {
@@ -33,6 +37,8 @@ const router = new VueRouter({
     position.selector = to.hash;
 
     if (/^#\d/.test(to.hash) || document.querySelector(to.hash)) {
+      position.offset = { y: -50, x: 0 };
+
       return position;
     }
   },

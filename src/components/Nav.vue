@@ -1,15 +1,36 @@
 <template>
   <v-container>
     <v-row class="d-none d-sm-flex" align="center" justify="center">
-      <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#resume"
+      <v-btn
+        :to="{ hash: '#resume' }"
+        @click.native="forceScroll('resume')"
+        class="mx-2"
+        color="cyan"
+        dark
+        rounded
+        depressed
         >Resume</v-btn
       >
 
-      <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#about"
+      <v-btn
+        :to="{ hash: '#about' }"
+        @click.native="forceScroll('about')"
+        class="mx-2"
+        color="cyan"
+        dark
+        rounded
+        depressed
         >About</v-btn
       >
 
-      <v-btn class="mx-2" color="cyan" dark rounded depressed to="/#projects"
+      <v-btn
+        :to="{ hash: '#projects' }"
+        @click.native="forceScroll('projects')"
+        class="mx-2"
+        color="cyan"
+        dark
+        rounded
+        depressed
         >Projects</v-btn
       >
     </v-row>
@@ -26,15 +47,24 @@
           </template>
 
           <v-list>
-            <v-list-item to="/#resume">
+            <v-list-item
+              :to="{ hash: '#resume' }"
+              @click.native="forceScroll('resume')"
+            >
               <v-list-item-title>Resume</v-list-item-title>
             </v-list-item>
 
-            <v-list-item to="/#about">
+            <v-list-item
+              :to="{ hash: '#about' }"
+              @click.native="forceScroll('about')"
+            >
               <v-list-item-title>About</v-list-item-title>
             </v-list-item>
 
-            <v-list-item to="/#projects">
+            <v-list-item
+              :to="{ hash: '#projects' }"
+              @click.native="forceScroll('projects')"
+            >
               <v-list-item-title>Projects</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -58,5 +88,18 @@ export default Vue.extend({
   components: {},
   computed: {},
   data: () => ({}),
+  methods: {
+    forceScroll(hash) {
+      if (`#${hash}` !== window.location.hash) {
+        return;
+      }
+
+      const element = document.getElementById(hash);
+
+      if (element) {
+        element.scrollIntoView();
+      }
+    },
+  },
 });
 </script>
