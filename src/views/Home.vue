@@ -4,15 +4,15 @@
 
     <v-container>
       <v-col>
-        <v-row id="resume" justify="center" align="center">
+        <v-row class="page" id="resume" justify="center" align="center">
           <p-resume></p-resume>
         </v-row>
 
-        <v-row id="about" justify="center" align="center">
+        <v-row class="page" id="about" justify="center" align="center">
           <p-about></p-about>
         </v-row>
 
-        <v-row id="projects" justify="center" align="center">
+        <v-row class="page" id="projects" justify="center" align="center">
           <p-projects></p-projects>
         </v-row>
       </v-col>
@@ -39,3 +39,10 @@ export default Vue.extend({
   data: () => ({}),
 });
 </script>
+
+<style lang="scss">
+.page {
+  margin-top: -50px;
+  padding-top: 50px;
+}
+</style>

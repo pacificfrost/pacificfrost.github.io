@@ -11,6 +11,7 @@
     </v-main>
 
     <v-btn
+      @click.native="forceScroll()"
       bottom
       class="ma-4"
       color="cyan"
@@ -43,8 +44,18 @@ export default Vue.extend({
     scrollPosition: 0,
   }),
   methods: {
+    forceScroll() {
+      if (this.scrollPosition !== 0) {
+        window.scroll({
+          behavior: 'smooth',
+          left: 0,
+          top: 0,
+        });
+      }
+    },
     setScrollPosition(event) {
       const top = window.pageYOffset || event.target.scrollTop || 0;
+
       this.scrollPosition = top;
     },
   },
