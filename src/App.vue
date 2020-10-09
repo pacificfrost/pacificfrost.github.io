@@ -26,6 +26,18 @@
       v-show="scrollPosition > 40"
       ><v-icon>keyboard_arrow_up</v-icon></v-btn
     >
+
+    <v-snackbar :timeout="-1" :value="updateExists" bottom right dark>
+      <v-col class="py-0">
+        <v-row justify="space-between" align="center">
+          Page updates available
+
+          <v-btn @click="refreshApp" color="teal" text>
+            Refresh
+          </v-btn>
+        </v-row>
+      </v-col>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -33,6 +45,8 @@
 import Vue from 'vue';
 import Nav from '@/components/Nav.vue';
 import Opening from '@/components/Opening.vue';
+
+import SwUpdate from '@/mixins/update.mixin';
 
 export default Vue.extend({
   name: 'App',
@@ -45,13 +59,15 @@ export default Vue.extend({
   }),
   methods: {
     forceScroll() {
-      if (this.scrollPosition !== 0) {
-        window.scroll({
-          behavior: 'smooth',
-          left: 0,
-          top: 0,
-        });
+      if (this.scrollPosition > 0) {
+        return;
       }
+
+      window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: 0,
+      });
     },
     setScrollPosition(event) {
       const top = window.pageYOffset || event.target.scrollTop || 0;
@@ -59,6 +75,7 @@ export default Vue.extend({
       this.scrollPosition = top;
     },
   },
+  mixins: [SwUpdate],
 });
 </script>
 
