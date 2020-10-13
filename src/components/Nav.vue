@@ -71,9 +71,7 @@
         </v-menu>
       </v-col>
 
-      <v-col cols="8">
-        <h2 class="text-center teal--text darken-4--text">Alisdair Frost</h2>
-      </v-col>
+      <v-col cols="8"></v-col>
 
       <v-col>
         <v-row justify="end">

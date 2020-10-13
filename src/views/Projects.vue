@@ -28,7 +28,6 @@
               class="white--text align-end"
               height="200px"
               lazy-src="/img/lazy-img.png"
-              min-width="340"
             >
               <template v-slot:placeholder>
                 <v-row align="center" class="fill-height ma-0" justify="center">
@@ -150,9 +149,9 @@ export default Vue.extend({
         endDate: '2020/10/15',
         startDate: '2020/08/24',
         projectLink: 'https://github.com/pacificfrost/pacificfrost.github.io',
-        imgUrl: '',
-        progress: 25,
-        status: 'In Progress',
+        imgUrl: '/img/media/portfolio.png',
+        progress: 100,
+        status: 'Complete',
         title: 'Create a Portfolio',
       },
       {
@@ -161,8 +160,8 @@ export default Vue.extend({
         endDate: '2020/10/15',
         projectLink: 'https://pacificfrost.github.io/mapet',
         startDate: '2020/08/01',
-        imgUrl: '',
-        progress: 34,
+        imgUrl: '/img/media/mapet.png',
+        progress: 50,
         status: 'In Progress',
         title: 'Mapet MVP',
       },
@@ -172,7 +171,7 @@ export default Vue.extend({
         endDate: '2020/08/25',
         projectLink: 'https://www.youtube.com/watch?v=HOXd3uy3QOk',
         startDate: '2019/08/23',
-        imgUrl: '',
+        imgUrl: '/img/media/track-day.png',
         progress: 100,
         title: 'Track Day Media: Edmonton Speedway Revival Shoot',
       },
@@ -182,7 +181,7 @@ export default Vue.extend({
         endDate: null,
         projectLink: null,
         startDate: '2020/01/01',
-        imgUrl: '',
+        imgUrl: '/img/media/go-kon.jpg',
         progress: 5,
         title: 'GoKon',
       },

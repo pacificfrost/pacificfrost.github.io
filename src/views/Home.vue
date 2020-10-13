@@ -2,7 +2,7 @@
   <v-col class="pa-0">
     <p-hero></p-hero>
 
-    <v-container>
+    <v-container class="px-0 px-sm-4">
       <v-col>
         <v-row class="page" id="resume" justify="center" align="center">
           <p-resume></p-resume>

@@ -12,7 +12,7 @@
           :gradient="gradient"
           class="opening__row"
           lazy-src="/img/lazy-img.png"
-          src="/static/coding.jpg"
+          src="/static/coding.png"
         >
           <v-row align="center" class="opening__row" justify="center">
             <h4 class="text-h4 opening__text">Development</h4>
@@ -25,7 +25,7 @@
           :gradient="gradient"
           class="opening__row"
           lazy-src="/img/lazy-img.png"
-          src="/static/design.jpg"
+          src="/static/design.png"
         >
           <v-row align="center" class="opening__row" justify="center">
             <h4 class="text-h4 opening__text">Design</h4>
