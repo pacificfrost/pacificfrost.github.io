@@ -5,7 +5,7 @@
         :to="{ hash: '#resume' }"
         @click.native="forceScroll('resume')"
         class="mx-2"
-        color="cyan"
+        color="teal"
         dark
         rounded
         depressed
@@ -16,7 +16,7 @@
         :to="{ hash: '#about' }"
         @click.native="forceScroll('about')"
         class="mx-2"
-        color="cyan"
+        color="teal"
         dark
         rounded
         depressed
@@ -27,7 +27,7 @@
         :to="{ hash: '#projects' }"
         @click.native="forceScroll('projects')"
         class="mx-2"
-        color="cyan"
+        color="teal"
         dark
         rounded
         depressed
