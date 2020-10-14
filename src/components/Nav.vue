@@ -33,6 +33,17 @@
         depressed
         >Projects</v-btn
       >
+
+      <v-btn
+        :to="{ hash: '#contact' }"
+        @click.native="forceScroll('contact')"
+        class="mx-2"
+        color="teal"
+        dark
+        rounded
+        depressed
+        >Contact</v-btn
+      >
     </v-row>
 
     <v-spacer class="d-sm-none"></v-spacer>
@@ -66,6 +77,13 @@
               @click.native="forceScroll('projects')"
             >
               <v-list-item-title>Projects</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item
+              :to="{ hash: '#contact' }"
+              @click.native="forceScroll('contact')"
+            >
+              <v-list-item-title>Contact</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>

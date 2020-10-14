@@ -15,6 +15,10 @@
         <v-row class="page" id="projects" justify="center" align="center">
           <p-projects></p-projects>
         </v-row>
+
+        <v-row class="page" id="contact" justify="center" align="center">
+          <p-contact></p-contact>
+        </v-row>
       </v-col>
     </v-container>
   </v-col>
@@ -24,6 +28,7 @@
 import Vue from 'vue';
 
 import About from '@/views/About.vue';
+import Contact from '@/views/Contact.vue';
 import Hero from '@/views/Hero.vue';
 import Projects from '@/views/Projects.vue';
 import Resume from '@/views/Resume.vue';
@@ -32,6 +37,7 @@ export default Vue.extend({
   name: 'Home',
   components: {
     'p-about': About,
+    'p-contact': Contact,
     'p-resume': Resume,
     'p-projects': Projects,
     'p-hero': Hero,
