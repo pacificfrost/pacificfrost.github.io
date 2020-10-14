@@ -89,10 +89,10 @@ export default Vue.extend({
         certification: 'Open Studies',
         details:
           'After immigrating to Canada, I needed to get some credits to apply for higher education.',
-        endDate: '2008/09',
+        endDate: '2009/06',
         location: 'Calgary AB, Canada',
         institution: 'Mount Royal College',
-        startDate: '2009/06',
+        startDate: '2008/09',
         status: 'Complete',
       },
     ],

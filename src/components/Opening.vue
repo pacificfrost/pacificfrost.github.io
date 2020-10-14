@@ -8,42 +8,49 @@
   >
     <div class="opening-wrapper" v-show="showOpening" ref="openingWrapper">
       <div class="opening opening--a">
-        <v-row
-          align="center"
+        <v-img
+          :gradient="gradient"
           class="opening__row"
-          justify="center"
-          style="background-image: url(/static/coding.jpg)"
+          lazy-src="/img/lazy-img.png"
+          src="/static/coding.png"
         >
-          <h4 class="text-h4 opening__text">Development</h4>
-        </v-row>
+          <v-row align="center" class="opening__row" justify="center">
+            <h4 class="text-h4 opening__text">Development</h4>
+          </v-row>
+        </v-img>
       </div>
 
       <div class="opening opening--b">
-        <v-row
-          align="center"
+        <v-img
+          :gradient="gradient"
           class="opening__row"
-          justify="center"
-          style="background-image: url(/static/design.jpg)"
+          lazy-src="/img/lazy-img.png"
+          src="/static/design.png"
         >
-          <h4 class="text-h4 opening__text">Design</h4>
-        </v-row>
+          <v-row align="center" class="opening__row" justify="center">
+            <h4 class="text-h4 opening__text">Design</h4>
+          </v-row>
+        </v-img>
       </div>
 
       <div class="opening opening--c">
-        <v-row
-          align="center"
+        <v-img
+          :gradient="gradient"
           class="opening__row"
-          justify="center"
-          style="background-image: url(/static/digital-media.jpg)"
+          lazy-src="/img/lazy-img.png"
+          src="/static/digital-media.png"
         >
-          <h4 class="text-h4 opening__text">Digital Media</h4>
-        </v-row>
+          <v-row align="center" class="opening__row" justify="center">
+            <h4 class="text-h4 opening__text">Digital Media</h4>
+          </v-row>
+        </v-img>
       </div>
 
       <v-btn
         class="opening-wrapper__button ma-4"
-        color="#36e8c7"
+        color="teal"
         rounded
+        dark
         @click="skipAnimation()"
         >skip</v-btn
       >
@@ -60,18 +67,22 @@ export default Vue.extend({
   components: {},
   data: () => ({
     animationCount: 0,
+    gradient:
+      'to top right, rgba(54, 232, 199, 0.24), rgba(156, 73, 183, 0.33)',
     showOpening: true,
   }),
   methods: {
-    skipAnimation() {
-      this.showOpening = false;
-    },
     checkAnimation() {
       this.animationCount += 1;
 
       if (this.animationCount === 3) {
         this.showOpening = false;
+        document.body.style.display = 'initial';
       }
+    },
+    skipAnimation() {
+      this.showOpening = false;
+      document.body.style.display = 'initial';
     },
   },
   mounted() {
@@ -79,6 +90,7 @@ export default Vue.extend({
       const wrapper = this.$refs.openingWrapper as HTMLElement;
 
       wrapper.addEventListener('animationend', this.checkAnimation);
+      document.body.style.display = 'fixed';
     });
   },
 });

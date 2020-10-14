@@ -14,7 +14,7 @@
       @click.native="forceScroll()"
       bottom
       class="ma-4"
-      color="cyan"
+      color="teal"
       dark
       fab
       fixed
