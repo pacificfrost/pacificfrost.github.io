@@ -17,7 +17,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["webpack-env", "mocha", "chai", "googlemaps"]
+    "types": ["webpack-env", "googlemaps"]
   },
   "include": [
     "src/**/*.ts",
